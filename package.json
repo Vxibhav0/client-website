@@ -1,0 +1,13 @@
+{
+  "name": "hot-n-cold",
+  "version": "1.0.0",
+  "description": "HOT n COLD coffee ordering website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

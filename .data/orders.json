@@ -1,0 +1,45 @@
+[
+  {
+    "id": "HNC-E4AAA3F4",
+    "createdAt": "2026-09-14T07:31:36.020Z",
+    "status": "confirmed",
+    "paymentStatus": "pending",
+    "paymentMethod": "card",
+    "items": [
+      {
+        "name": "Cold Coffee",
+        "icon": "🥤",
+        "price": 160,
+        "quantity": 1,
+        "subtotal": 160
+      }
+    ],
+    "total": 160,
+    "currency": "INR"
+  },
+  {
+    "id": "HNC-345AC187",
+    "createdAt": "2026-09-14T07:29:09.485Z",
+    "status": "confirmed",
+    "paymentStatus": "pending",
+    "paymentMethod": "pay-at-cafe",
+    "items": [
+      {
+        "name": "Cappuccino",
+        "icon": "☕",
+        "price": 180,
+        "quantity": 1,
+        "subtotal": 180
+      },
+      {
+        "name": "Caramel Latte",
+        "icon": "☕",
+        "price": 210,
+        "quantity": 1,
+        "subtotal": 210
+      }
+    ],
+    "total": 390,
+    "currency": "INR"
+  }
+]

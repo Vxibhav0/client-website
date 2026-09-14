@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>HOT n COLD — Crafted for every mood</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="logo" href="#home">HOT<span>n</span>COLD</a>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#story">Our story</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit us</a>
+    </div>
+
+    <button class="nav-order" id="openCartBtn">
+      Order now <span>↗</span>
+    </button>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-light light-one"></div>
+      <div class="hero-light light-two"></div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span></span>
+          Crafted daily · Since 2024
+        </p>
+
+        <h1>
+          Coffee,
+          <em>but make it</em>
+          a feeling.
+        </h1>
+
+        <p class="hero-description">
+          Velvety hot brews, ice-cold blends and a little pause in every cup.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-btn" href="#menu">
+            Explore the menu <span>↓</span>
+          </a>
+
+          <button class="play-story" id="playStoryBtn">
+            <i>▶</i>
+            See our process
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>4.9/5</strong>
+            <span>coffee lovers rate us</span>
+          </div>
+
+          <div class="meta-line"></div>
+
+          <div>
+            <strong>12k+</strong>
+            <span>cups made with love</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Images + 3D Parallax -->
+      <div class="hero-visual">
+        <div class="product-stage" id="coffee-3d">
+          <div class="photo-shadow"></div>
+
+          <div class="photo-card back-photo">
+            <img
+              src="https://images.unsplash.com/photo-1620842947093-284677c6c658?auto=format&fit=crop&w=1000&q=85"
+              alt="Roasted coffee beans"
+            />
+          </div>
+
+          <div class="photo-card main-photo" id="heroProduct">
+            <img
+              src="https://images.unsplash.com/photo-1519100384240-07fd2a6a264a?auto=format&fit=crop&w=1200&q=90"
+              alt="Fresh cappuccino with latte art"
+            />
+            <div class="photo-glass"></div>
+          </div>
+
+          <div class="floating-badge badge-one">
+            <span>✦</span>
+            Handcrafted daily
+          </div>
+
+          <div class="floating-badge badge-two">
+            <small>EST.</small>
+            <b>2024</b>
+          </div>
+        </div>
+
+        <div class="scroll-note">
+          SCROLL TO SIP <span>↓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moving Text -->
+    <section class="marquee">
+      <div class="marquee-track">
+        <span>ESPRESSO</span><i>✦</i>
+        <span>ICED LATTE</span><i>✦</i>
+        <span>GOOD VIBES</span><i>✦</i>
+        <span>ESPRESSO</span><i>✦</i>
+        <span>ICED LATTE</span><i>✦</i>
+        <span>GOOD VIBES</span><i>✦</i>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story-section" id="story">
+      <div class="section-heading reveal">
+        <p class="eyebrow">
+          <span></span>
+          The HOT n COLD way
+        </p>
+
+        <h2>
+          Made slow.<br />
+          <em>Enjoyed slower.</em>
+        </h2>
+      </div>
+
+      <div class="story-grid">
+        <article class="story-card warm reveal">
+          <span class="story-number">01</span>
+          <div class="story-icon">♨</div>
+
+          <h3>Roasted with care</h3>
+
+          <p>
+            Thoughtfully sourced beans, roasted just enough to bring out
+            their best side.
+          </p>
+        </article>
+
+        <article class="story-card dark reveal">
+          <span class="story-number">02</span>
+          <div class="story-icon">◌</div>
+
+          <h3>Made to your mood</h3>
+
+          <p>
+            Bold, creamy, cold, sweet — your coffee should always feel like you.
+          </p>
+        </article>
+
+        <article class="story-card cream reveal">
+          <span class="story-number">03</span>
+          <div class="story-icon">♡</div>
+
+          <h3>Served with a pause</h3>
+
+          <p>
+            A tiny escape from the noisy bits of your day, one beautiful cup at
+            a time.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu-section" id="menu">
+      <div class="menu-top reveal">
+        <div>
+          <p class="eyebrow">
+            <span></span>
+            From the counter
+          </p>
+
+          <h2>
+            Coffee, cake<br />
+            <em>&amp; flaky things.</em>
+          </h2>
+        </div>
+
+        <div class="menu-filter">
+          <button class="filter-btn active" data-filter="all">All menu</button>
+          <button class="filter-btn" data-filter="coffee">Coffee</button>
+          <button class="filter-btn" data-filter="cold">Cold</button>
+          <button class="filter-btn" data-filter="pastry">Pastries</button>
+          <button class="filter-btn" data-filter="cake">Cakes</button>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+        <!-- Cappuccino -->
+        <article class="drink-card hot reveal" data-category="coffee">
+          <div class="drink-top">
+            <span>01 · HOT</span>
+
+            <button
+              class="quick-add"
+              data-name="Cappuccino"
+              data-price="180"
+              data-icon="☕"
+            >
+              +
+            </button>
+          </div>
+
+          <div class="drink-photo">
+            <img
+              src="https://images.unsplash.com/photo-1637959741616-16c7bfe9300b?auto=format&fit=crop&w=800&q=85"
+              alt="Cappuccino"
+            />
+            <span class="photo-shine"></span>
+          </div>
+
+          <h3>Cappuccino</h3>
+          <p>Double espresso, silk milk and cloud-like foam.</p>
+          <strong>₹180</strong>
+        </article>
+
+        <!-- Caramel Latte -->
+        <article class="drink-card hot reveal" data-category="coffee">
+          <div class="drink-top">
+            <span>02 · HOT</span>
+
+            <button
+              class="quick-add"
+              data-name="Caramel Latte"
+              data-price="210"
+              data-icon="☕"
+            >
+              +
+            </button>
+          </div>
+
+          <div class="drink-photo">
+            <img
+              src="https://images.unsplash.com/photo-1524671710025-d79530c2f957?auto=format&fit=crop&w=800&q=85"
+              alt="Caramel latte"
+            />
+            <span class="photo-shine"></span>
+          </div>
+
+          <h3>Caramel Latte</h3>
+          <p>Smooth espresso, warm caramel and creamy milk.</p>
+          <strong>₹210</strong>
+        </article>
+
+        <!-- Cold Coffee -->
+        <article class="drink-card cold reveal" data-category="cold">
+          <div class="drink-top">
+            <span>03 · COLD</span>
+
+            <button
+              class="quick-add"
+              data-name="Cold Coffee"
+              data-price="160"
+              data-icon="🥤"
+            >
+              +
+            </button>
+          </div>
+
+          <div class="drink-photo">
+            <img
+              src="https://images.unsplash.com/photo-1686575669781-74e03080541b?auto=format&fit=crop&w=800&q=85"
+              alt="Iced cold coffee"
+            />
+            <span class="photo-shine"></span>
+          </div>
+
+          <h3>Cold Coffee</h3>
+          <p>Chilled coffee, vanilla cream and a perfectly soft finish.</p>
+          <strong>₹160</strong>
+        </article>
+
+        <!-- Mocha Frappe -->
+        <article class="drink-card cold reveal" data-category="cold">
+          <div class="drink-top">
+            <span>04 · COLD</span>
+
+            <button
+              class="quick-add"
+              data-name="Mocha Frappe"
+              data-price="230"
+              data-icon="🥤"
+            >
+              +
+            </button>
+          </div>
+
+          <div class="drink-photo">
+            <img
+              src="https://images.unsplash.com/photo-1645243370660-b5ae21c7d02d?auto=format&fit=crop&w=800&q=85"
+              alt="Mocha frappe"
+            />
+            <span class="photo-shine"></span>
+          </div>
+
+          <h3>Mocha Frappe</h3>
+          <p>Espresso, dark chocolate, ice and pure happiness.</p>
+          <strong>₹230</strong>
+        </article>
+
+        <!-- Butter Croissant -->
+        <article class="drink-card pastry reveal" data-category="pastry">
+          <div class="drink-top">
+            <span>05 · BAKERY</span>
+            <button class="quick-add" data-name="Butter Croissant" data-price="160" data-icon="🥐">+</button>
+          </div>
+          <div class="drink-photo">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Fresh butter croissant" />
+            <span class="photo-shine"></span>
+          </div>
+          <h3>Butter Croissant</h3>
+          <p>Golden, shatteringly crisp and made for a long coffee break.</p>
+          <strong>₹160</strong>
+        </article>
+
+        <!-- Almond Croissant -->
+        <article class="drink-card pastry reveal" data-category="pastry">
+          <div class="drink-top">
+            <span>06 · BAKERY</span>
+            <button class="quick-add" data-name="Almond Croissant" data-price="190" data-icon="🥐">+</button>
+          </div>
+          <div class="drink-photo">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=900&amp;q=85&amp;crop=entropy" alt="Almond croissant" />
+            <span class="photo-shine"></span>
+          </div>
+          <h3>Almond Croissant</h3>
+          <p>Buttery layers, almond cream and a little extra crunch.</p>
+          <strong>₹190</strong>
+        </article>
+
+        <!-- Cinnamon Roll -->
+        <article class="drink-card pastry reveal" data-category="pastry">
+          <div class="drink-top">
+            <span>07 · BAKERY</span>
+            <button class="quick-add" data-name="Cinnamon Roll" data-price="170" data-icon="🥨">+</button>
+          </div>
+          <div class="drink-photo">
+            <img src="https://images.unsplash.com/photo-1514509152927-0403a1b6a2d8?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Iced cinnamon roll" />
+            <span class="photo-shine"></span>
+          </div>
+          <h3>Cinnamon Roll</h3>
+          <p>Warm spice, soft swirls and vanilla glaze on top.</p>
+          <strong>₹170</strong>
+        </article>
+
+        <!-- Chocolate Muffin -->
+        <article class="drink-card pastry reveal" data-category="pastry">
+          <div class="drink-top">
+            <span>08 · BAKERY</span>
+            <button class="quick-add" data-name="Chocolate Muffin" data-price="140" data-icon="🧁">+</button>
+          </div>
+          <div class="drink-photo">
+            <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Chocolate muffin" />
+            <span class="photo-shine"></span>
+          </div>
+          <h3>Chocolate Muffin</h3>
+          <p>Moist cocoa crumb, molten centre, no sharing required.</p>
+          <strong>₹140</strong>
+        </article>
+
+        <!-- Chocolate Truffle Cake -->
+        <article class="drink-card cake reveal" data-category="cake">
+          <div class="drink-top">
+            <span>09 · CAKES</span>
+            <button class="quick-add" data-name="Chocolate Truffle Cake" data-price="220" data-icon="🍰">+</button>
+          </div>
+          <div class="drink-photo">
+            <img src="https://images.unsplash.com/photo-1707718189563-17eb5ab9a82b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Chocolate truffle cake" />
+            <span class="photo-shine"></span>
+          </div>
+          <h3>Chocolate Truffle</h3>
+          <p>Dark chocolate layers, glossy ganache and soft sponge.</p>
+          <strong>₹220</strong>
+        </article>
+
+        <!-- Basque Cheesecake -->
+        <article class="drink-card cake reveal" data-category="cake">
+          <div class="drink-top">
+            <span>10 · CAKES</span>
+            <button class="quick-add" data-name="Basque Cheesecake" data-price="240" data-icon="🍮">+</button>
+          </div>
+          <div class="drink-photo">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Burnt basque cheesecake" />
+            <span class="photo-shine"></span>
+          </div>
+          <h3>Basque Cheesecake</h3>
+          <p>Burnt top, silky centre and the dreamiest caramel finish.</p>
+          <strong>₹240</strong>
+        </article>
+      </div>
+    </section>
+
+    <!-- Visit -->
+    <section class="visit-section" id="visit">
+      <div class="visit-card reveal">
+        <p class="eyebrow">
+          <span></span>
+          Find your corner
+        </p>
+
+        <h2>
+          Come for<br />
+          the coffee.<br />
+          <em>Stay for the vibe.</em>
+        </h2>
+
+        <div class="visit-details">
+          <p><b>MON — SUN</b> &nbsp; 8:00 AM — 11:00 PM</p>
+          <p><b>LOCATION</b> &nbsp; Your favourite neighbourhood</p>
+        </div>
+
+        <button class="primary-btn" id="visitOrderBtn">
+          Order a coffee <span>↗</span>
+        </button>
+      </div>
+
+      <div class="visit-orb">
+        <span>HOT n COLD</span>
+        <span>HOT n COLD</span>
+        <span>HOT n COLD</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <a class="logo" href="#home">HOT<span>n</span>COLD</a>
+    <p>Made with warmth and lots of coffee.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <!-- Cart -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">
+          <span></span>
+          Your little order
+        </p>
+
+        <h2>Ready to sip?</h2>
+      </div>
+
+      <button class="close-cart" id="closeCartBtn">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <div class="empty-cart">
+        <span>☕</span>
+        <h3>Your cart is empty</h3>
+        <p>Add something delicious from the menu.</p>
+      </div>
+    </div>
+
+    <div class="cart-bottom">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+
+      <button class="checkout-btn" id="checkoutBtn">
+        Continue to payment <span>→</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="toast" id="toast">
+    <span>✓</span>
+    <p id="toastText">Added to your order</p>
+  </div>
+
+  <script src="script.js"></script>
+  <script type="module" src="3d.js"></script>
+</body>
+</html>

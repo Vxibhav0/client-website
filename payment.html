@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment — HOT n COLD</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="payment.css" />
+</head>
+
+<body>
+  <div class="payment-noise"></div>
+
+  <main class="payment-layout">
+    <section class="payment-copy">
+      <a class="payment-logo" href="index.html">HOT<span>n</span>COLD</a>
+
+      <div class="copy-content">
+        <p class="eyebrow"><span></span> Almost there</p>
+        <h1>A good coffee<br />is <em>on its way.</em></h1>
+        <p>Choose the way you want to pay. Your order will be freshly prepared once payment is complete.</p>
+
+        <div class="coffee-mark">
+          <div class="cup-mini">☕</div>
+          <span>MADE WITH A LITTLE EXTRA WARMTH</span>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-link">← Continue browsing</a>
+    </section>
+
+    <section class="payment-area">
+      <div class="checkout-card">
+        <div class="checkout-title">
+          <div>
+            <p class="eyebrow"><span></span> Secure checkout</p>
+            <h2>Payment details</h2>
+          </div>
+          <span class="secure">⌁ 100% Secure</span>
+        </div>
+
+        <div class="order-summary" id="orderSummary"></div>
+
+        <div class="payment-tabs">
+          <button class="payment-tab active" data-method="upi">
+            <span>◈</span> UPI
+          </button>
+          <button class="payment-tab" data-method="card">
+            <span>▣</span> Card
+          </button>
+        </div>
+
+        <form id="paymentForm">
+          <div class="payment-method active" id="upiMethod">
+            <label>
+              UPI ID
+              <input id="upiId" type="text" placeholder="yourname@upi" />
+            </label>
+
+            <div class="upi-apps">
+              <button type="button" class="upi-app selected">G<span>pay</span></button>
+              <button type="button" class="upi-app">Phone<span>Pe</span></button>
+              <button type="button" class="upi-app">pay<span>tm</span></button>
+            </div>
+
+            <p class="helper-text">You will receive a payment request in your UPI app.</p>
+          </div>
+
+          <div class="payment-method" id="cardMethod">
+            <label>
+              Cardholder name
+              <input id="cardName" type="text" placeholder="Name on card" />
+            </label>
+
+            <label>
+              Card number
+              <div class="input-with-icon">
+                <input id="cardNumber" type="text" maxlength="19" inputmode="numeric" placeholder="1234 5678 9012 3456" />
+                <span>💳</span>
+              </div>
+            </label>
+
+            <div class="two-fields">
+              <label>
+                Expiry date
+                <input id="expiry" type="text" maxlength="5" inputmode="numeric" placeholder="MM/YY" />
+              </label>
+
+              <label>
+                CVV
+                <input id="cvv" type="password" maxlength="3" inputmode="numeric" placeholder="•••" />
+              </label>
+            </div>
+          </div>
+
+          <button class="pay-btn" type="submit">
+            Pay <span id="payAmount">₹0</span> <b>→</b>
+          </button>
+        </form>
+
+        <p class="terms">By continuing, you agree to our terms of service and privacy policy.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="success-modal" id="successModal">
+    <div class="success-card">
+      <div class="check">✓</div>
+      <p class="eyebrow"><span></span> Order confirmed</p>
+      <h2>That was<br /><em>deliciously easy.</em></h2>
+      <p>Your order is being prepared. See you in a few minutes!</p>
+      <a href="index.html">Back to HOT n COLD</a>
+    </div>
+  </div>
+
+  <div
+  class="payment-success-toast"
+  id="paymentSuccessToast"
+  role="status"
+  aria-live="polite"
+>
+  <div class="success-toast-icon">✓</div>
+
+  <div>
+    <strong>Payment successful!</strong>
+    <p>Your coffee is now being prepared.</p>
+  </div>
+
+  <button id="closeSuccessToast" aria-label="Close success message">×</button>
+</div>
+
+  <script src="payment.js"></script>
+</body>
+</html>
