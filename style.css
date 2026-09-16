@@ -422,6 +422,14 @@ h1 em, h2 em {
   margin-top: 62px;
 }
 
+.menu-loading {
+  grid-column: 1 / -1;
+  padding: 60px 20px;
+  color: var(--muted, #8a7a6d);
+  text-align: center;
+  font-size: 15px;
+}
+
 .drink-card {
   min-height: 410px;
   padding: 19px;

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Order desk — HOT n COLD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- Login gate -->
+  <div class="lock-screen" id="lockScreen">
+    <form class="lock-card" id="loginForm">
+      <a class="lock-logo" href="index.html">HOT<span>n</span>COLD</a>
+      <p class="eyebrow">Order desk</p>
+      <h1>Owner sign in</h1>
+      <p class="lock-hint">Enter your desk password to see today's orders.</p>
+
+      <label>
+        Password
+        <input id="passwordInput" type="password" autocomplete="current-password" placeholder="••••••••" required />
+      </label>
+
+      <button class="unlock-btn" type="submit">Unlock desk <b>→</b></button>
+      <p class="lock-message" id="lockMessage" role="alert"></p>
+    </form>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="desk" id="desk" hidden>
+    <header class="desk-top">
+      <a class="desk-logo" href="index.html">HOT<span>n</span>COLD <em>· Order desk</em></a>
+
+      <div class="desk-top-actions">
+        <button class="ghost-btn" id="refreshBtn" type="button">↻ Refresh</button>
+        <button class="ghost-btn" id="logoutBtn" type="button">Log out</button>
+      </div>
+    </header>
+
+    <nav class="view-tabs" id="viewTabs">
+      <button class="view-tab active" data-view="orders">Orders</button>
+      <button class="view-tab" data-view="menu">Menu</button>
+    </nav>
+
+    <div id="ordersView">
+      <section class="stat-row" id="statRow">
+        <div class="stat-card">
+          <span>Orders today</span>
+          <strong id="statOrders">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Revenue today</span>
+          <strong id="statRevenue">₹0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Needs attention</span>
+          <strong id="statPending">0</strong>
+        </div>
+      </section>
+
+      <nav class="status-tabs" id="statusTabs">
+        <button class="status-tab active" data-status="all">All</button>
+        <button class="status-tab" data-status="confirmed">New</button>
+        <button class="status-tab" data-status="preparing">Preparing</button>
+        <button class="status-tab" data-status="ready">Ready</button>
+        <button class="status-tab" data-status="completed">Completed</button>
+        <button class="status-tab" data-status="cancelled">Cancelled</button>
+      </nav>
+
+      <main class="order-list" id="orderList" aria-live="polite">
+        <!-- order cards render here -->
+      </main>
+
+      <p class="empty-state" id="emptyState" hidden>No orders here yet.</p>
+    </div>
+
+    <div id="menuView" hidden>
+      <div class="menu-view-top">
+        <h2>Menu items</h2>
+        <button class="primary-btn-sm" id="addMenuItemBtn" type="button">+ Add item</button>
+      </div>
+
+      <div class="menu-items-list" id="menuItemsList" aria-live="polite"></div>
+
+      <p class="empty-state" id="menuEmptyState" hidden>No menu items yet — add your first one.</p>
+    </div>
+  </div>
+
+  <!-- Add / edit menu item -->
+  <div class="modal-overlay" id="menuModalOverlay" hidden>
+    <form class="menu-modal" id="menuForm">
+      <h3 id="menuModalTitle">Add item</h3>
+
+      <label>
+        Name
+        <input id="menuName" type="text" maxlength="60" placeholder="e.g. Hazelnut Latte" required />
+      </label>
+
+      <div class="two-col">
+        <label>
+          Price (₹)
+          <input id="menuPrice" type="number" min="1" max="100000" step="1" required />
+        </label>
+
+        <label>
+          Icon (emoji)
+          <input id="menuIcon" type="text" maxlength="4" placeholder="☕" />
+        </label>
+      </div>
+
+      <label>
+        Category
+        <select id="menuCategory">
+          <option value="coffee">Coffee (hot)</option>
+          <option value="cold">Cold</option>
+          <option value="pastry">Pastry</option>
+          <option value="cake">Cake</option>
+        </select>
+      </label>
+
+      <label>
+        Description
+        <textarea id="menuDescription" maxlength="200" rows="2" placeholder="One short tempting line…"></textarea>
+      </label>
+
+      <label>
+        Image URL
+        <input id="menuImageUrl" type="url" placeholder="https://images.unsplash.com/…" />
+      </label>
+
+      <div class="modal-actions">
+        <button type="button" class="ghost-btn" id="menuModalCancel">Cancel</button>
+        <button type="submit" class="unlock-btn" id="menuModalSave">Save item</button>
+      </div>
+
+      <p class="lock-message" id="menuFormMessage" role="alert"></p>
+    </form>
+  </div>
+
+  <template id="menuItemRowTemplate">
+    <div class="menu-item-row">
+      <span class="menu-item-icon"></span>
+
+      <div class="menu-item-info">
+        <strong class="menu-item-name"></strong>
+        <span class="menu-item-meta"></span>
+      </div>
+
+      <label class="toggle">
+        <input type="checkbox" class="active-toggle" />
+        Active
+      </label>
+
+      <button class="ghost-btn edit-btn" type="button">Edit</button>
+      <button class="ghost-btn delete-btn" type="button">Delete</button>
+    </div>
+  </template>
+
+  <template id="orderCardTemplate">
+    <article class="order-card">
+      <div class="order-card-top">
+        <div>
+          <span class="order-id"></span>
+          <span class="order-time"></span>
+        </div>
+        <span class="fulfilment-badge"></span>
+      </div>
+
+      <div class="order-customer">
+        <strong class="customer-name"></strong>
+        <a class="customer-phone"></a>
+      </div>
+
+      <ul class="order-items"></ul>
+
+      <p class="order-note" hidden></p>
+
+      <div class="order-card-bottom">
+        <strong class="order-total"></strong>
+
+        <div class="status-control">
+          <select class="status-select">
+            <option value="confirmed">New</option>
+            <option value="preparing">Preparing</option>
+            <option value="ready">Ready</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="admin.js"></script>
+</body>
+</html>

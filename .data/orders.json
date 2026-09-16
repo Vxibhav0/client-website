@@ -1,8 +1,185 @@
 [
   {
+    "id": "HNC-9C32FB57",
+    "createdAt": "2026-09-15T06:07:12.101Z",
+    "status": "cancelled",
+    "paymentStatus": "pending",
+    "paymentMethod": "pay-at-cafe",
+    "customer": {
+      "name": "vaibhav verma",
+      "phone": "+917000174094"
+    },
+    "fulfilment": "dine-in",
+    "note": "less ice",
+    "items": [
+      {
+        "name": "Almond Croissant",
+        "icon": "🥐",
+        "price": 190,
+        "quantity": 1,
+        "subtotal": 190
+      },
+      {
+        "name": "Cinnamon Roll",
+        "icon": "🥨",
+        "price": 170,
+        "quantity": 1,
+        "subtotal": 170
+      }
+    ],
+    "total": 360,
+    "currency": "INR"
+  },
+  {
+    "id": "HNC-135D31EC",
+    "createdAt": "2026-09-15T05:08:02.475Z",
+    "status": "preparing",
+    "paymentStatus": "pending",
+    "paymentMethod": "pay-at-cafe",
+    "items": [
+      {
+        "name": "Basque Cheesecake",
+        "icon": "🍮",
+        "price": 240,
+        "quantity": 1,
+        "subtotal": 240
+      },
+      {
+        "name": "Chocolate Truffle Cake",
+        "icon": "🍰",
+        "price": 220,
+        "quantity": 1,
+        "subtotal": 220
+      }
+    ],
+    "total": 460,
+    "currency": "INR"
+  },
+  {
+    "id": "HNC-44B1B42C",
+    "createdAt": "2026-09-15T04:40:43.362Z",
+    "status": "ready",
+    "paymentStatus": "pending",
+    "paymentMethod": "pay-at-cafe",
+    "items": [
+      {
+        "name": "Basque Cheesecake",
+        "icon": "🍮",
+        "price": 240,
+        "quantity": 1,
+        "subtotal": 240
+      },
+      {
+        "name": "Chocolate Truffle Cake",
+        "icon": "🍰",
+        "price": 220,
+        "quantity": 1,
+        "subtotal": 220
+      },
+      {
+        "name": "Cold Coffee",
+        "icon": "🥤",
+        "price": 160,
+        "quantity": 1,
+        "subtotal": 160
+      }
+    ],
+    "total": 620,
+    "currency": "INR"
+  },
+  {
+    "id": "HNC-E0D40C02",
+    "createdAt": "2026-09-15T04:39:21.334Z",
+    "status": "ready",
+    "paymentStatus": "pending",
+    "paymentMethod": "pay-at-cafe",
+    "items": [
+      {
+        "name": "Cappuccino",
+        "icon": "☕",
+        "price": 180,
+        "quantity": 1,
+        "subtotal": 180
+      },
+      {
+        "name": "Caramel Latte",
+        "icon": "☕",
+        "price": 210,
+        "quantity": 1,
+        "subtotal": 210
+      },
+      {
+        "name": "Cold Coffee",
+        "icon": "🥤",
+        "price": 160,
+        "quantity": 1,
+        "subtotal": 160
+      }
+    ],
+    "total": 550,
+    "currency": "INR"
+  },
+  {
+    "id": "HNC-070D5D10",
+    "createdAt": "2026-09-14T07:42:49.653Z",
+    "status": "ready",
+    "paymentStatus": "pending",
+    "paymentMethod": "pay-at-cafe",
+    "items": [
+      {
+        "name": "Cappuccino",
+        "icon": "☕",
+        "price": 180,
+        "quantity": 1,
+        "subtotal": 180
+      },
+      {
+        "name": "Caramel Latte",
+        "icon": "☕",
+        "price": 210,
+        "quantity": 1,
+        "subtotal": 210
+      }
+    ],
+    "total": 390,
+    "currency": "INR"
+  },
+  {
+    "id": "HNC-B24FD9F8",
+    "createdAt": "2026-09-14T07:41:19.941Z",
+    "status": "cancelled",
+    "paymentStatus": "pending",
+    "paymentMethod": "pay-at-cafe",
+    "items": [
+      {
+        "name": "Cappuccino",
+        "icon": "☕",
+        "price": 180,
+        "quantity": 1,
+        "subtotal": 180
+      },
+      {
+        "name": "Butter Croissant",
+        "icon": "🥐",
+        "price": 160,
+        "quantity": 1,
+        "subtotal": 160
+      },
+      {
+        "name": "Cinnamon Roll",
+        "icon": "🥨",
+        "price": 170,
+        "quantity": 1,
+        "subtotal": 170
+      }
+    ],
+    "total": 510,
+    "currency": "INR"
+  },
+  {
     "id": "HNC-E4AAA3F4",
     "createdAt": "2026-09-14T07:31:36.020Z",
-    "status": "confirmed",
+    "status": "preparing",
     "paymentStatus": "pending",
     "paymentMethod": "card",
     "items": [
@@ -20,7 +197,7 @@
   {
     "id": "HNC-345AC187",
     "createdAt": "2026-09-14T07:29:09.485Z",
-    "status": "confirmed",
+    "status": "completed",
     "paymentStatus": "pending",
     "paymentMethod": "pay-at-cafe",
     "items": [

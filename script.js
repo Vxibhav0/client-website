@@ -1,5 +1,6 @@
 const cart = JSON.parse(localStorage.getItem("hotNColdCart")) || [];
 
+const menuGrid = document.getElementById("menuGrid");
 const cartDrawer = document.getElementById("cartDrawer");
 const overlay = document.getElementById("overlay");
 const cartItems = document.getElementById("cartItems");
@@ -82,11 +83,53 @@ function addToCart(name, price, icon) {
   showToast(`${name} added to your order`);
 }
 
-document.querySelectorAll(".quick-add").forEach((button) => {
-  button.addEventListener("click", () => {
-    addToCart(button.dataset.name, button.dataset.price, button.dataset.icon);
+async function loadMenu() {
+  try {
+    const response = await fetch("/api/menu");
+    const data = await response.json();
+
+    if (!data.success || !Array.isArray(data.items) || data.items.length === 0) {
+      menuGrid.innerHTML = `<p class="menu-loading">No items on the menu right now.</p>`;
+      return;
+    }
+
+    renderMenu(data.items);
+  } catch {
+    menuGrid.innerHTML = `<p class="menu-loading">Could not load the menu. Please refresh the page.</p>`;
+  }
+}
+
+function renderMenu(items) {
+  menuGrid.innerHTML = items.map((item) => `
+    <article class="drink-card" data-category="${item.category}">
+      <div class="drink-top">
+        <span>${item.label}</span>
+        <button
+          class="quick-add"
+          data-name="${item.name}"
+          data-price="${item.price}"
+          data-icon="${item.icon}"
+          aria-label="Add ${item.name} to your order"
+        >+</button>
+      </div>
+
+      <div class="drink-photo">
+        <img src="${item.imageUrl}" alt="${item.name}" loading="lazy" />
+        <div class="photo-shine"></div>
+      </div>
+
+      <h3>${item.name}</h3>
+      <p>${item.description}</p>
+      <strong>₹${item.price}</strong>
+    </article>
+  `).join("");
+
+  document.querySelectorAll(".quick-add").forEach((button) => {
+    button.addEventListener("click", () => {
+      addToCart(button.dataset.name, button.dataset.price, button.dataset.icon);
+    });
   });
-});
+}
 
 cartItems.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-action]");
@@ -157,3 +200,4 @@ document.getElementById("playStoryBtn").addEventListener("click", () => {
 });
 
 renderCart();
+loadMenu();
