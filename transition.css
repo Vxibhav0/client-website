@@ -1,0 +1,84 @@
+/* Page transition overlay — shown briefly whenever a visitor moves between
+   pages (index.html, payment.html, admin.html). Load this alongside
+   transition.js on every page. */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background: rgba(25, 16, 13, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.page-transition-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.page-transition-cup-wrap {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+}
+
+.page-transition-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 202, 104, 0.22);
+  border-top-color: #ffca68;
+  animation: pt-ring-spin 1.15s linear infinite;
+}
+
+.page-transition-cup {
+  font-size: 36px;
+  transform-origin: 50% 55%;
+  animation: pt-cup-spin 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+}
+
+.page-transition-text {
+  display: flex;
+  color: #fff6ec;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.page-transition-text .pt-dots span {
+  animation: pt-dot-fade 1.2s infinite;
+  opacity: 0;
+}
+
+.page-transition-text .pt-dots span:nth-child(2) { animation-delay: 0.2s; }
+.page-transition-text .pt-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pt-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pt-cup-spin {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(200deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pt-dot-fade {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

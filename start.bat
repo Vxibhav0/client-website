@@ -16,7 +16,7 @@ set ADMIN_PASSWORD=apna-real-password-daalo
 REM --- Aapka apna mobile number ---
 REM Naya order aate hi isi number par "New order" message jayega.
 REM Sirf 10 digit likho, +91 mat lagao.
-set OWNER_PHONE=9876543210
+set OWNER_PHONE=7000174094
 
 REM --- Twilio settings (SMS/WhatsApp bhejne ke liye) ---
 REM Agar Twilio abhi setup nahi kiya hai, inhe waise hi khali

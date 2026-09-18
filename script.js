@@ -162,7 +162,11 @@ document.getElementById("checkoutBtn").addEventListener("click", () => {
     return;
   }
 
-  window.location.href = "payment.html";
+  if (window.pageTransition) {
+    window.pageTransition.goTo("payment.html");
+  } else {
+    window.location.href = "payment.html";
+  }
 });
 
 document.querySelectorAll(".filter-btn").forEach((button) => {

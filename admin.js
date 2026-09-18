@@ -63,7 +63,7 @@ const STATUS_LABEL = {
   preparing: "Preparing",
   ready: "Ready",
   completed: "Completed",
-  cancelled: "Cancelled"
+  cancelled: "Cancelledd"
 };
 
 function formatPrice(amount) {

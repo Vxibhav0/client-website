@@ -140,7 +140,11 @@ paymentForm.addEventListener("submit", async (event) => {
 
 document.getElementById("closeSuccessToast").addEventListener("click", () => {
   successToast.classList.remove("show");
-  window.location.href = "index.html";
+  if (window.pageTransition) {
+    window.pageTransition.goTo("index.html");
+  } else {
+    window.location.href = "index.html";
+  }
 });
 
 renderSummary();

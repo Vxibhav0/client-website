@@ -251,7 +251,7 @@
     {
       "id": "HNC-1315291B",
       "created_at": "2026-09-16T05:37:00.941Z",
-      "status": "confirmed",
+      "status": "completed",
       "payment_status": "pending",
       "payment_method": "pay-at-cafe",
       "customer_name": "vaibhav verma",
@@ -260,6 +260,48 @@
       "note": "l",
       "items_json": "[{\"name\":\"Cappuccino\",\"icon\":\"☕\",\"price\":180,\"quantity\":1,\"subtotal\":180},{\"name\":\"Almond Croissant\",\"icon\":\"🥐\",\"price\":190,\"quantity\":1,\"subtotal\":190}]",
       "total": 370,
+      "currency": "INR"
+    },
+    {
+      "id": "HNC-E4A1B085",
+      "created_at": "2026-09-16T07:12:02.029Z",
+      "status": "preparing",
+      "payment_status": "pending",
+      "payment_method": "pay-at-cafe",
+      "customer_name": "senpai spider",
+      "customer_phone": "7126387163",
+      "fulfilment": "pickup",
+      "note": "less ice",
+      "items_json": "[{\"name\":\"Almond Croissant\",\"icon\":\"🥐\",\"price\":190,\"quantity\":1,\"subtotal\":190},{\"name\":\"Caramel Latte\",\"icon\":\"☕\",\"price\":210,\"quantity\":1,\"subtotal\":210},{\"name\":\"Mocha Frappe\",\"icon\":\"🥤\",\"price\":230,\"quantity\":1,\"subtotal\":230},{\"name\":\"Cold Coffee\",\"icon\":\"🥤\",\"price\":160,\"quantity\":1,\"subtotal\":160}]",
+      "total": 790,
+      "currency": "INR"
+    },
+    {
+      "id": "HNC-1BD15918",
+      "created_at": "2026-09-16T15:10:35.060Z",
+      "status": "confirmed",
+      "payment_status": "pending",
+      "payment_method": "pay-at-cafe",
+      "customer_name": "vaibhav verma",
+      "customer_phone": "+917000174094",
+      "fulfilment": "pickup",
+      "note": "less sugar",
+      "items_json": "[{\"name\":\"Almond Croissant\",\"icon\":\"🥐\",\"price\":190,\"quantity\":1,\"subtotal\":190},{\"name\":\"Cinnamon Roll\",\"icon\":\"🥨\",\"price\":170,\"quantity\":1,\"subtotal\":170},{\"name\":\"Basque Cheesecake\",\"icon\":\"🍮\",\"price\":240,\"quantity\":1,\"subtotal\":240},{\"name\":\"Chocolate Muffin\",\"icon\":\"🧁\",\"price\":140,\"quantity\":2,\"subtotal\":280}]",
+      "total": 880,
+      "currency": "INR"
+    },
+    {
+      "id": "HNC-2C9F371A",
+      "created_at": "2026-09-18T05:35:32.738Z",
+      "status": "confirmed",
+      "payment_status": "pending",
+      "payment_method": "pay-at-cafe",
+      "customer_name": "vaibhav verma",
+      "customer_phone": "+917000174094",
+      "fulfilment": "pickup",
+      "note": "ss",
+      "items_json": "[{\"name\":\"Cold Coffee\",\"icon\":\"🥤\",\"price\":160,\"quantity\":1,\"subtotal\":160}]",
+      "total": 160,
       "currency": "INR"
     }
   ]
